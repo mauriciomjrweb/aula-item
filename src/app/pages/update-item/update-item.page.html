@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="item" padding >
+  <form [formGroup]="edit_item_form" 
+    (submit)="updateItem(edit_item_form.value)">
+    <ion-item>
+      <ion-label color="primary" 
+        position="floating">Titulo</ion-label>
+      <ion-input type="text" 
+        formControlName="titulo" required ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" 
+          position="floating">Descrição</ion-label>
+        <ion-input type="text" 
+          formControlName="descricao" required ></ion-input>
+      </ion-item>
+      <ion-button type="submit" 
+        [disabled]="!edit_item_form.valid" >
+        Atualizar</ion-button>
+
+  </form>
+</ion-content>
